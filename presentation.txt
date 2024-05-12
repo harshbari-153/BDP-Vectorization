@@ -1,0 +1,45 @@
+# p23ds020 slide 1 to 9
+There are different Neural Network structures available for various kind of data types in deep learning processes.
+(slide 5)
+We have ANN for tabular type data,
+(slide 6)
+we have CNN for image related data,
+(slide 7)
+we have RNN for variable lenght textual data, and many more neural networks for different kind of data.
+one thing which is common in all kinds of neural networks is that they all take numerical values as input,
+whether it be image or text, first it needs to be converted into number and then they are being provided to neural networks.
+Accuracy of the neural networks depends on how well these numbers are generated, this process is called "word embeddings".
+(slide 8)
+In this project we have given an attempt to make word embeddings from different technique which we have named as "B.D.P. vectorization"
+also known as "Base Difference Procedure Vectorization".
+(slide 9)
+In this technique we have tried to extract indepth context from the sentence in such a way that change in a single word which is a main subject
+can detect the change of meaning of the sentence. For example given 2 sentences in each example have only 1 word difference but that word itself
+can change whole context of the sentence.
+
+
+# p23ds008 slide 10 to 14
+(slide 11)
+here we will describe the architecture of BDP vectorization.
+first we have our input dataset with "n" different sentences.
+then we have our main module which does the vectorization, that will create vectors of 150 dimensions.
+so in total we have "n x 150" numbers.
+The main 3 component of BDP Vectorization is applying preprocessing, bdp operation and add statistics.
+Out of these 3 2nd phase is most important.
+(slide 12)
+in preprocessing we have basic steps like (read all given on the screen)
+(slide 13)
+this is the most important phase of the process
+here, we have input of pos tagging of variable lenght.
+first of all we need to find first noun tag that word is used as a base vector.
+from here we have derived the term "Base vector" in the title.
+then we need to we need to perform operations on that base vector according to pos tags given one by one.
+if we encounter a noun vector, then we need to multiply that whole vector with their similarities,
+else we just need to add that vector to base vector.
+After performing these 2 operation on base vector, we need to see how much this vector have been deviated from original base vector.
+to see that we need to do subtraction and from here the 2nd term is coined as "difference" in the title.
+this will give output of 100 dimension.
+(slide 14)
+this is again one simple step, we just need to add some statistical data into the bdp vector.
+original dimension was of 100 from bdp phase, and now here we are appending 50 new data points to that vector.
+so it will output as 150 dimension.
